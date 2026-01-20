@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Köller+Nowak | Premium Druckerei Düsseldorf</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: 1rem; color: var(--gray); }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero */
+        .hero {
+            padding-top: 8rem;
+            background-color: var(--dark);
+            color: var(--white);
+            background-image: linear-gradient(rgba(30, 41, 59, 0.85), rgba(30, 41, 59, 0.85)), url('https://picsum.photos/1920/1080?random=1');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .hero p {
+            color: var(--gray-light);
+            font-size: 1.125rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Über uns */
+        .about {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            width: 100%;
+            height: 300px;
+            background-image: url('https://picsum.photos/600/400?random=2');
+            background-size: cover;
+            background-position: center;
+            border-radius: 0.5rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-body {
+            padding: 1.5rem;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 5px solid var(--primary);
+        }
+
+        .team-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .team-role {
+            font-size: 0.875rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--gray);
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Preise */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid var(--gray-light);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            border-width: 2px;
+        }
+
+        .pricing-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-period {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .pricing-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+        }
+
+        .testimonial-role {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.2;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background-color: var(--gray-light);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Kontakt */
+        .contact {
+            background-color: var(--dark);
+            color: var(--white);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+        }
+
+        .contact-info p {
+            color: var(--gray-light);
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details i {
+            margin-right: 1rem;
+            color: var(--primary);
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-form {
+            flex: 1;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-light);
+            border-radius: 0.25rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-text {
+            color: var(--gray-light);
+            max-width: 400px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .social-links-footer {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links-footer a {
+            color: var(--gray-light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links-footer a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray);
+            color: var(--gray-light);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            .hero-content {
+                max-width: 50%;
+            }
+
+            .about {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .about-content {
+                padding-right: 2rem;
+            }
+
+            .stats {
+                justify-content: flex-start;
+                gap: 3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-content {
+                flex-direction: row;
+            }
+
+            .contact-info {
+                padding-right: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+    </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var forms = document.querySelectorAll('form');
+  forms.forEach(function(form) {
+    if (form.querySelector('input[type="email"]') && form.querySelector('textarea')) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var fd = new FormData(form);
+        var data = {
+          name: fd.get('name') || fd.get('Name') || '',
+          email: fd.get('email') || fd.get('Email') || '',
+          phone: fd.get('phone') || fd.get('telefon') || '',
+          message: fd.get('message') || fd.get('nachricht') || '',
+          firma: 'Köller+Nowak',
+          demo_url: window.location.href
+        };
+        var btn = form.querySelector('button[type="submit"], input[type="submit"]');
+        if (btn) btn.disabled = true;
+        fetch('https://DEINE-N8N-URL/webhook/kontakt-formular', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+          alert(res.success ? 'Danke! Wir melden uns.' : 'Fehler: ' + res.message);
+          if (res.success) form.reset();
+        })
+        .catch(function() { alert('Fehler. Bitte info@wzvision.de kontaktieren.'); })
+        .finally(function() { if (btn) btn.disabled = false; });
+      });
+    }
+  });
+});
+</script>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">Köller<span>+</span>Nowak</a>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#ueber-uns">Über uns</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#preise">Preise</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>Premium Drucklösungen für Ihr Business</h1>
+                <p>Als führende Druckerei in Düsseldorf bieten wir maßgeschneiderte Druck- und Medienlösungen für Unternehmen jeder Größe. Von Visitenkarten bis zu Großformatdruck – wir setzen Ihre Ideen perfekt um.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn">Unsere Services</a>
+                    <a href="#kontakt" class="btn btn-outline">Kontakt aufnehmen</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="ueber-uns" class="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-subtitle">Über uns</span>
+                    <h2>Ihre Druckerei in Düsseldorf</h2>
+                </div>
+                <div class="about">
+                    <div class="about-content">
+                        <p>Seit über 20 Jahren steht Köller+Nowak für höchste Qualität und innovativen Druck in Düsseldorf. Als familiengeführtes Unternehmen kombinieren wir traditionelles Handwerk mit modernster Technologie, um Ihnen erstklassige Druckerzeugnisse zu liefern.</p>
+                        <p>Unser engagiertes Team aus Druckexperten, Designern und Medienfachleuten arbeitet Hand in Hand, um Ihre Projekte von der ersten Idee bis zur finalen Auslieferung zu begleiten. Wir verstehen uns nicht nur als Druckerei, sondern als Ihr Partner für alle Belange der visuellen Kommunikation.</p>
+                        <p>Mit unserem Standort im Herzen Düsseldorfs sind wir optimal angebunden und können Ihnen schnelle Lieferzeiten und persönliche Beratung vor Ort bieten. Vertrauen Sie auf unsere Erfahrung und Leidenschaft für den perfekten Druck.</p>
+                    </div>
+                    <div class="about-image"></div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Jahre Erfahrung</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Zufriedene Kunden</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Qualitätsgarantie</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-subtitle">Unsere Leistungen</span>
+                    <h2>Maßgeschneiderte Drucklösungen</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image" style="background-image: url('https://picsum.photos/600/400?random=3');"></div>
+                        <div class="service-body">
+                            <div class="service-icon">
+                                <i class="fas fa-business-card"></i>
+                            </div>
+                            <h3 class="service-title">Geschäftsdrucksachen</h3>
+                            <p>Visitenkarten, Briefbögen und Flyer, die Ihr Unternehmen professionell repräsentieren. Hochwertige Papiere und Veredelungen für den perfekten ersten Eindruck.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image" style="background-image: url('https://picsum.photos/600/400?random=4');"></div>
+                        <div class="service-body">
+                            <div class="service-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3 class="service-title">Broschüren & Kataloge</h3>
+                            <p>Individuelle Broschüren, Produktkataloge und Magazine in kleinen und großen Auflagen. Von der Konzeption bis zur Bindung – alles aus einer Hand.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image" style="background-image: url('https://picsum.photos/600/400?random=5');"></div>
+                        <div class="service-body">
+                            <div class="service-icon">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <h3 class="service-title">Großformatdruck</h3>
+                            <p>Plakate, Banner, Messeaufsteller und Fahrzeugbeklebung in brillanter Qualität. Für maximale Aufmerksamkeit bei Events und Werbekampagnen.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image" style="background-image: url('https://picsum.photos/600/400?random=6');"></div>
+                        <div class="service-body">
+                            <div class="service-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <h3 class="service-title">Verpackungsdruck</h3>
+                            <p>Individuelle Verpackungen, die Ihre Produkte ins rechte Licht rücken. Nachhaltige Materialien und innovative Drucktechniken für einzigartige Ergebnisse.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image" style="background-image: url('https://picsum.photos/600/400?random=7');"></div>
+                        <div class="service-body">
+                            <div class="service-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="service-title">Grafikdesign</h3>
+                            <p>Professionelle Designservices von Logoentwicklung bis zur kompletten Corporate Identity. Unsere Kreativteams setzen Ihre Markenbotschaft visuell um.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image" style="background-image: url('https://picsum.photos/600/400?random=8');"></div>
+                        <div class="service-body">
+                            <div class="service-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h3 class="service-title">Sonderanfertigungen</h3>
+                            <p>Einzigartige Drucklösungen für besondere Anforderungen. Von Prägungen über Stanzungen bis zu speziellen Materialien – wir machen es möglich.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="team-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-subtitle">Unser Team</span>
+                    <h2>Erfahrene Druckexperten</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="https://picsum.photos/400/400?random=10" alt="Thomas Köller" class="team-image">
+                        <h3 class="team-name">Thomas Köller</h3>
+                        <div class="team-role">Geschäftsführer</div>
+                        <p>Mit über 25 Jahren Erfahrung in der Druckbranche führt Thomas Köller unser Unternehmen mit Leidenschaft und Weitsicht.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-xing"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="https://picsum.photos/400/400?random=11" alt="Sarah Nowak" class="team-image">
+                        <h3 class="team-name">Sarah Nowak</h3>
+                        <div class="team-role">Kreativdirektorin</div>
+                        <p>Unsere Design-Expertin mit einem Auge für Details und einem Gespür für zeitgemäße visuelle Kommunikation.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="https://picsum.photos/400/400?random=12" alt="Markus Weber" class="team-image">
+                        <h3 class="team-name">Markus Weber</h3>
+                        <div class="team-role">Produktionsleiter</div>
+                        <p>Verantwortlich für die reibungslose Produktion und Qualitätssicherung aller Druckaufträge.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-xing"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="preise" class="pricing-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-subtitle">Preise</span>
+                    <h2>Transparente Druckkosten</h2>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Starter</h3>
+                        <div class="pricing-price">ab 49€</div>
+                        <div class="pricing-period">pro Auftrag</div>
+                        <ul class="pricing-features">
+                            <li>Bis 100 Stück</li>
+                            <li>Standard-Papiere</li>
+                            <li>DIN A6 bis DIN A4</li>
+                            <li>4/4-farbig</li>
+                            <li>Lieferzeit 3-5 Tage</li>
+                        </ul>
+                        <a href="#kontakt" class="btn">Anfragen</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <h3 class="pricing-title">Business</h3>
+                        <div class="pricing-price">ab 199€</div>
+                        <div class="pricing-period">pro Auftrag</div>
+                        <ul class="pricing-features">
+                            <li>Bis 1000 Stück</li>
+                            <li>Premium-Papiere</li>
+                            <li>Alle Standardformate</li>
+                            <li>4/4-farbig + Sonderfarben</li>
+                            <li>Lieferzeit 2-4 Tage</li>
+                            <li>Kostenlose Designberatung</li>
+                        </ul>
+                        <a href="#kontakt" class="btn">Anfragen</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <div class="pricing-price">Individuell</div>
+                        <div class="pricing-period">nach Anfrage</div>
+                        <ul class="pricing-features">
+                            <li>Ab 1000 Stück</li>
+                            <li>Alle Papierqualitäten</li>
+                            <li>Sonderformate möglich</li>
+                            <li>Vollfarbdruck + Veredelung</li>
+                            <li>Express-Lieferung</li>
+                            <li>Persönlicher Projektmanager</li>
+                            <li>Lagerhaltung & Logistik</li>
+                        </ul>
+                        <a href="#kontakt" class="btn">Anfragen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-subtitle">Kundenstimmen</span>
+                    <h2>Das sagen unsere Kunden</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-content">Die Zusammenarbeit mit Köller+Nowak war von Anfang an professionell und unkompliziert. Unsere neuen Produktkataloge sind ein absoluter Hingucker und haben bei unseren Kunden große Begeisterung ausgelöst.</p>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/100/100?random=13" alt="Michael Bauer" class="testimonial-image">
+                            <div>
+                                <div class="testimonial-name">Michael Bauer</div>
+                                <div class="testimonial-role">Geschäftsführer, TechSolutions GmbH</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-content">Für unsere Messeauftritte benötigen wir regelmäßig hochwertige Drucke in großen Formaten. Köller+Nowak liefert immer pünktlich und in perfekter Qualität. Absolut empfehlenswert!</p>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/100/100?random=14" alt="Julia Hartmann" class="testimonial-image">
+                            <div>
+                                <div class="testimonial-name">Julia Hartmann</div>
+                                <div class="testimonial-role">Marketing Manager, GreenEnergy AG</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-content">Als Startup hatten wir besondere Anforderungen an unser Corporate Design. Das Team von Köller+Nowak hat uns nicht nur gedruckt, sondern auch bei der Gestaltung wertvolle Tipps gegeben. Super Service!</p>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/100/100?random=15" alt="David Chen" class="testimonial-image">
+                            <div>
+                                <div class="testimonial-name">David Chen</div>
+                                <div class="testimonial-role">CEO, FoodieBox</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-content">Die Qualität der Verpackungen für unsere Luxusprodukte ist entscheidend. Köller+Nowak versteht es, unsere hohen Ansprüche an Material und Verarbeitung perfekt umzusetzen.</p>
+                        <div class="testimonial-author">
+                            <img src="https://picsum.photos/100/100?random=16" alt="Sophie Müller" class="testimonial-image">
+                            <div>
+                                <div class="testimonial-name">Sophie Müller</div>
+                                <div class="testimonial-role">Produktmanagerin, LuxeCosmetics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-subtitle">Häufige Fragen</span>
+                    <h2>Alles was Sie wissen müssen</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Welche Dateiformate akzeptieren Sie für den Druck?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Wir akzeptieren alle gängigen Dateiformate wie PDF (bevorzugt), AI, PSD, EPS, JPG und TIFF. Für beste Ergebnisse empfehlen wir PDF/X-4 mit eingebetteten Schriften und 300 dpi Auflösung.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Wie lange dauert die Produktion meiner Druckaufträge?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Standardaufträge sind in 3-5 Werktagen fertig. Bei Express-Aufträgen können wir oft innerhalb von 24 Stunden liefern (gegen Aufpreis). Die genaue Lieferzeit hängt von Auftragsvolumen und gewählten Optionen ab.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Bieten Sie auch Grafikdesign-Services an?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ja, unser hauseigenes Designteam unterstützt Sie gerne bei der Erstellung oder Optimierung Ihrer Druckvorlagen. Von Logoentwicklung bis zur kompletten Gestaltung Ihrer Druckerzeugnisse.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Sind Ihre Druckereien umweltzertifiziert?</span>
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ja, wir sind nach FSC® und PEFC zertifiziert und verwenden ausschließlich Papiere aus nachhaltiger Forstwirtschaft. Zudem setzen wir auf umweltfreundliche Druckfarben und energieeffiziente Produktionsverfahren.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-subtitle">Kontakt</span>
+                    <h2>Wir freuen uns auf Ihr Projekt</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Köller+Nowak Druckerei</h3>
+                        <p>Ihre Ansprechpartner für alle Fragen rund um Druck und Medien in Düsseldorf.</p>
+                        <div class="contact-details">
+                            <div>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Musterstraße 45, 40213 Düsseldorf</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-phone"></i>
+                                <span>+49 (0)211 123 456 78</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@koellernowak.de</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-clock"></i>
+                                <span>Mo-Fr: 8:00 - 18:00 Uhr</span>
+                            </div>
+                        </div>
+                        <div class="social-links social-links-footer">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-xing"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ihr Name*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail-Adresse*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Gewünschter Service*</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Bitte wählen</option>
+                                <option value="geschäftsdruck">Geschäftsdrucksachen</option>
+                                <option value="broschüren">Broschüren & Kataloge</option>
+                                <option value="großformat">Großformatdruck</option>
+                                <option value="verpackung">Verpackungsdruck</option>
+                                <option value="design">Grafikdesign</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Ihre Nachricht*</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Nachricht absenden</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Köller<span>+</span>Nowak</div>
+                    <p class="footer-text">Ihre Druckerei für höchste Ansprüche in Düsseldorf. Qualität, die man sieht und fühlt.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#ueber-uns">Über uns</a>
+                    <a href="#services">Services</a>
+                    <a href="#team">Team</a>
+                    <a href="#preise">Preise</a>
+                    <a href="#kontakt">Kontakt</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Köller+Nowak Druckerei Düsseldorf. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.faq-item.active');
+
+                if (currentlyActive && currentlyActive !== item) {
+                    currentlyActive.classList.toggle('active');
+                }
+
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+<div id="wz-banner" style="position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1a365d,#2563eb);color:#fff;padding:20px;text-align:center;z-index:99999;box-shadow:0 -4px 20px rgba(0,0,0,.3);font-family:sans-serif">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px">
+    <div style="flex:1;min-width:280px">
+      <p style="margin:0;font-size:18px;font-weight:600">Gefällt Ihnen diese Demo?</p>
+      <p style="margin:5px 0 0;font-size:14px;opacity:.9">Erstellt von <strong>WZ Vision</strong></p>
+    </div>
+    <div style="display:flex;gap:12px">
+      <a href="mailto:info@wzvision.de?subject=Interesse%20Webseite%20K%C3%B6ller%2BNowak" style="padding:12px 28px;background:#fff;color:#1a365d;text-decoration:none;border-radius:8px;font-weight:600">Kontakt</a>
+      <a href="https://wzvision.de" target="_blank" style="padding:12px 28px;background:transparent;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;border:2px solid #fff">Mehr</a>
+    </div>
+  </div>
+  <p style="margin:15px 0 0;font-size:12px;opacity:.7">Demo bis 23.1.2026 | info@wzvision.de</p>
+</div>
+<div style="height:140px"></div>
+</body>
+</html>
